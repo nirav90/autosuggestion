@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- <constant name="struts.enable.DynamicMethodInvocation" value="false" /> -->
+    <constant name="struts.devMode" value="true" />
+	<constant name="struts.multipart.saveDir" value="E:" />
+    <package name="default" extends="tiles-default">
+
+		<interceptors>
+			<interceptor name="authenticateUserInterceptor" class="assys.com.interceptor.LoginInterceptor"/>
+		</interceptors> 
+		
+		<!-- <interceptors>
+            <interceptor name="login" class="assys.com.interceptor.LoginInterceptor" />
+            <interceptor-stack name="stack-with-login">
+                <interceptor-ref name="login"/>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+        </interceptors> -->
+        <!--  <default-interceptor-ref name="stack-with-login"/> -->
+
+        <global-results>
+            <result name="login">${pageContext.request.contextPath}/jsp/index.jsp</result>
+        </global-results>
+ 
+        <!-- ********JSP********** -->
+        
+        <!-- *****************************************Common Action*********************************************** -->
+        
+        <!-- This action shows login.jsp Page -->
+        <action name="login_jsp">
+            <result name="success" type="tiles">login_jsp</result>
+        </action>
+        
+        <!-- This action is called when logout button pressed by user -->
+        <action name="Logout_jsp" class="assys.com.dbAction.Logout">
+            <result name="SUCCESS">${pageContext.request.contextPath}/jsp/index.jsp</result>
+        </action>
+        
+        <!-- **********************************************Admin**************************************************** -->
+        
+		<!-- This action shows add_user.jsp Page -->
+		<action name="add_user_jsp">
+			<result name="success" type="tiles">add_user_jsp</result>        	
+		</action>
+		        
+		<!-- This action shows admin_setting.jsp Page -->
+		<action name="admin_setting_jsp">
+			<result name="success" type="tiles">admin_setting_jsp</result>        	
+		</action>
+		        
+		<!-- This action shows global_setting_jsp Page -->
+		<action name="admin_global_setting_jsp">
+			<result name="success" type="tiles">admin_global_setting_jsp</result>        	
+		</action>
+		        
+		<!-- This action shows webmail_setting_jsp.action Page -->
+		<action name="admin_user_default_jsp">
+			<result name="success" type="tiles">admin_user_default_jsp</result>        	
+		</action>
+        
+		<!-- This action shows webmail_setting_jsp.action Page -->
+		<action name="admin_webmail_setting_jsp">
+			<result name="success" type="tiles">admin_webmail_setting_jsp</result>        	
+		</action>
+		        
+		<!-- This action shows webmail_setting_jsp.action Page -->
+		<action name="admin_SMS_setting_jsp">
+			<result name="success" type="tiles">admin_SMS_setting_jsp</result>        	
+		</action>
+		        
+		<!-- This action shows webmail_setting_jsp.action Page -->
+		<action name="admin_brand_setting_jsp">
+			<result name="success" type="tiles">admin_brand_setting_jsp</result>        	
+		</action>
+		        
+		<!-- This action shows admin_setting.jsp Page -->
+		<action name="admin_employee_detail_jsp">
+			<result name="success" type="tiles">admin_employee_detail_jsp</result>        	
+		</action>
+		        
+		<!-- This action shows admin contacts Page -->
+		<action name="admin_contacts_jsp">
+			<result name="success" type="tiles">admin_contacts_jsp</result>        	
+		</action>
+		        
+		<!-- This action shows admin  add contacts Page -->
+		<action name="admin_add_contacts_jsp">
+			<result name="success" type="tiles">admin_add_contacts_jsp</result>        	
+		</action>
+		
+		<!-- This action shows admin  add contacts Page -->
+		<action name="admin_delete_contacts_jsp">
+			<result name="success" type="tiles">admin_delete_contacts_jsp</result>        	
+		</action>
+		        
+		<!-- This action shows admin  add contacts Page -->
+		<action name="admin_dashboard_jsp">
+			<result name="success" type="tiles">admin_dashboard_jsp</result>        	
+		</action>
+		        
+		<!-- This action shows change_password.jsp Page -->
+		<action name="admin_project_jsp">
+			<result name="success" type="tiles">admin_project_jsp</result>        	
+		</action>
+		
+		<action name="admin_client_detail_jsp">
+			<result name="success" type="tiles">admin_client_detail_jsp</result>        	
+		</action>
+		
+		<action name="admin_project_detail_jsp">
+			<result name="success" type="tiles">admin_project_detail_jsp</result>        	
+		</action>
+		        
+		<action name="admin_compose_jsp">
+			<result name="success" type="tiles">admin_compose_jsp</result>        	
+		</action>
+		            
+		<action name="admin_content_jsp">
+			<result name="success" type="tiles">admin_content_jsp</result>        	
+		</action>    
+		            
+		<action name="admin_mail_click_jsp">
+			<result name="success" type="tiles">admin_mail_click_jsp</result>        	
+		</action>
+		          
+		<action name="admin_sent_mail_jsp">
+			<result name="success" type="tiles">admin_sent_mail_jsp</result>        	
+		</action>
+		            
+		<action name="admin_draft_jsp">
+			<result name="success" type="tiles">admin_draft_jsp</result>        	
+		</action>
+		
+		<action name="admin_leave_jsp">
+			<result name="success" type="tiles">admin_leave_jsp</result>        	
+		</action>
+		
+		
+		<action name="leaveApproveDetail_jsp">
+			<result name="success" type="tiles">leaveApproveDetail_jsp</result>        	
+		</action>
+		             
+		<action name="leaveDetail_jsp">
+			<result name="success" type="tiles">leaveDetail_jsp</result>        	
+		</action>  
+		        
+		<action name="admin_employee_show_jsp">
+			<result name="success" type="tiles">admin_employee_show_jsp</result>        	
+		</action>
+		           
+		<action name="admin_client_id_jsp">
+			<result name="success" type="tiles">admin_client_id_jsp</result>        	
+		</action>
+           
+        <!--******************************************************************************************************  -->
+        <!-- **********************************************EMPLOYEE*********************************************** -->
+        <!--******************************************************************************************************  -->
+        
+		
+		<action name="employee_report_jsp">
+			<interceptor-ref name="authenticateUserInterceptor"></interceptor-ref>
+			<result name="success" type="tiles">employee_report_jsp</result>        	
+		</action>
+		
+		
+		
+		<action name="employee_dashboard_jsp">
+			<interceptor-ref name="authenticateUserInterceptor"></interceptor-ref>
+			<result name="success" type="tiles">employee_dashboard_jsp</result>        	
+		</action>
+		
+		<action name="employee_profile_jsp">
+			<interceptor-ref name="authenticateUserInterceptor" ></interceptor-ref>
+			<result name="success" type="tiles">employee_profile_jsp</result>        	
+		</action>
+		        
+		<action name="employee_personal_profile_jsp">
+			<result name="success" type="tiles">employee_personal_profile_jsp</result>        	
+		</action>
+		        
+		<action name="employee_work_profile_jsp">
+			<result name="success" type="tiles">employee_work_profile_jsp</result>        	
+		</action>
+		        
+		<!-- This action shows admin contacts Page -->
+		<action name="employee_contacts_jsp">
+			<result name="success" type="tiles">employee_contacts_jsp</result>        	
+		</action>
+		        
+		<action name="admin_contact_detail_jsp">
+			<result name="success" type="tiles">admin_contact_detail_jsp</result>        	
+		</action>
+		        
+		<!-- This action shows admin  add contacts Page -->
+		<action name="employee_add_contacts_jsp">
+			<result name="success" type="tiles">employee_add_contacts_jsp</result>        	
+		</action>
+		        
+		<!-- This action shows admin_setting.jsp Page -->
+		<action name="employee_setting_jsp">
+			<result name="success" type="tiles">employee_setting_jsp</result>        	
+		</action>
+		        
+		<action name="employee_change_password_jsp">
+			<result name="success" type="tiles">employee_change_password_jsp</result>        	
+		</action>
+		        
+		<action name="employee_sms_setting_jsp">
+			<result name="success" type="tiles">employee_sms_setting_jsp</result>        	
+		</action>
+		
+		<action name="employee_sms_register_setting_jsp">
+			<result name="success" type="tiles">employee_sms_register_setting_jsp</result>        	
+		</action>
+		
+		<action name="employee_sms_password_setting_jsp">
+			<result name="success" type="tiles">employee_sms_password_setting_jsp</result>        	
+		</action>
+				
+		<action name="employee_mail_setting_jsp">
+			<result name="success" type="tiles">employee_mail_setting_jsp</result>        	
+		</action>
+		        
+		<action name="employee_ntfc_mail_jsp">
+			<result name="success" type="tiles">employee_ntfc_mail_jsp</result>        	
+		</action>
+		
+		<action name="employee_mail_jsp">
+			<result name="success" type="tiles">employee_mail_jsp</result>        	
+		</action>
+		        
+		<action name="employee_contact_detail_jsp">
+			<result name="success" type="tiles">employee_contact_detail_jsp</result>        	
+		</action>
+		
+		<action name="employee_delete_contacts_jsp">
+			<result name="success" type="tiles">employee_delete_contacts_jsp</result>        	
+		</action>
+		           
+		<action name="employee_compose_jsp">
+			<result name="success" type="tiles">employee_compose_jsp</result>        	
+		</action>
+		            
+		<action name="employee_mail_click_jsp">
+			<result name="success" type="tiles">employee_mail_click_jsp</result>        	
+		</action>
+		          
+		<action name="employee_sent_mail_jsp">
+			<result name="success" type="tiles">employee_sent_mail_jsp</result>        	
+		</action>
+		          
+		<action name="employee_content_jsp">
+			<result name="success" type="tiles">employee_content_jsp</result>        	
+		</action>
+		        
+		<action name="employee_calender_jsp">
+			<result name="success" type="tiles">employee_calender_jsp</result>        	
+		</action>
+		        
+		<action name="assign_work_detail_jsp">
+			<result name="success" type="tiles">assign_work_detail_jsp</result>        	
+		</action>
+		        
+		<action name="employee_work_submit_jsp">
+			<result name="success" type="tiles">employee_work_submit_jsp</result>        	
+		</action>  
+		 
+		<action name="employee_work_notification_jsp">
+			<result name="success" type="tiles">employee_work_notification_jsp</result>        	
+		</action> 
+		           
+		<action name="employee_given_work_to_submit_jsp">
+			<result name="success" type="tiles">employee_given_work_to_submit_jsp</result>        	
+		</action>
+
+		<action name="employee_show_submit_work_detail_jsp">
+			<result name="success" type="tiles">employee_show_submit_work_detail_jsp</result>        	
+		</action> 
+		        
+		<action name="employee_work_submited_jsp">
+			<result name="success" type="tiles">employee_work_submited_jsp</result>        	
+		</action>  
+		
+		
+		         
+		<action name="employee_leave_jsp">
+			<interceptor-ref name="authenticateUserInterceptor"></interceptor-ref>
+			<result name="success" type="tiles">employee_leave_jsp</result>        	
+		</action>
+		        
+		<action name="employee_em_leave_jsp">
+			<interceptor-ref name="authenticateUserInterceptor"></interceptor-ref>
+			<result name="success" type="tiles">employee_em_leave_jsp</result>        	
+		</action>
+		           
+		<action name="employee_mul_leave_jsp">
+			<interceptor-ref name="authenticateUserInterceptor"></interceptor-ref>
+			<result name="success" type="tiles">employee_mul_leave_jsp</result>        	
+		</action>
+		        
+		<action name="employee_draft_jsp">
+			<interceptor-ref name="authenticateUserInterceptor"></interceptor-ref>
+			<result name="success" type="tiles">employee_draft_jsp</result>        	
+		</action>
+		        
+		<action name="employee_draft_detail_jsp">
+			<interceptor-ref name="authenticateUserInterceptor"></interceptor-ref>
+			<result name="success" type="tiles">employee_draft_detail_jsp</result>        	
+		</action>
+		
+		<action name="employee_sent_detail_jsp">
+			<interceptor-ref name="authenticateUserInterceptor"></interceptor-ref>
+			<result name="success" type="tiles">employee_sent_detail_jsp</result>        	
+		</action>
+		
+		
+		<action name="employee_work_report_jsp">
+			<interceptor-ref name="authenticateUserInterceptor"></interceptor-ref>
+			<result name="success" type="tiles">employee_work_report_jsp</result>        	
+		</action>
+		
+		
+		           
+
+        <!--******************************************************************************************************  -->
+        <!-- ************************************************Project Manager************************************************** -->
+        <!--******************************************************************************************************  -->  
+        
+        
+        
+        <action name="manager_report_jsp">
+			<interceptor-ref name="authenticateUserInterceptor"></interceptor-ref>
+			<result name="success" type="tiles">manager_report_jsp</result>        	
+		</action>
+        
+		<action name="manager_sent_mail_jsp">
+			<result name="success" type="tiles">manager_sent_mail_jsp</result>        	
+		</action>
+		
+		<action name="manager_sent_detail_jsp">
+			<result name="success" type="tiles">manager_sent_detail_jsp</result>        	
+		</action>
+		
+		        
+		<action name="manager_mail_click_jsp">
+			<result name="success" type="tiles">manager_mail_click_jsp</result>        	
+		</action>
+		        
+		<action name="manager_compose_jsp">
+			<result name="success" type="tiles">manager_compose_jsp</result>        	
+		</action>
+		        
+		<action name="manager_content_jsp">
+			<result name="success" type="tiles">manager_content_jsp</result>        	
+		</action>
+		         
+		<action name="manager_dashboard_jsp">
+			<result name="success" type="tiles">manager_dashboard_jsp</result>        	
+		</action>
+		        
+		<action name="manager_profile_jsp">
+			<result name="success" type="tiles">manager_profile_jsp</result>        	
+		</action>
+		        
+		<action name="manager_personal_profile_jsp">
+			<result name="success" type="tiles">manager_personal_profile_jsp</result>        	
+		</action>
+		        
+		<action name="manager_work_profile_jsp">
+			<result name="success" type="tiles">manager_work_profile_jsp</result>        	
+		</action>
+		        
+		<!-- This action shows admin contacts Page -->
+		<action name="manager_contacts_jsp">
+			<result name="success" type="tiles">manager_contacts_jsp</result>        	
+		</action>
+		        
+		<!-- This action shows admin  add contacts Page -->
+		<action name="manager_add_contacts_jsp">
+			<result name="success" type="tiles">manager_add_contacts_jsp</result>        	
+		</action>
+		        
+		<!-- This action shows contacts detail Page -->
+		<action name="manager_contact_detail_jsp">
+			<result name="success" type="tiles">manager_contact_detail_jsp</result>        	
+		</action>
+		
+		<!-- This action shows contacts detail Page -->
+		<action name="manager_delete_contacts_jsp">
+			<result name="success" type="tiles">manager_delete_contacts_jsp</result>        	
+		</action>
+		    
+		<action name="manager_calender_jsp">
+			<result name="success" type="tiles">manager_calender_jsp</result>        	
+		</action>
+		   
+		<!-- This action shows admin_setting.jsp Page -->
+		<action name="manager_setting_jsp">
+			<result name="success" type="tiles">manager_setting_jsp</result>        	
+		</action>
+		        
+		<action name="manager_change_password_jsp">
+			<result name="success" type="tiles">manager_change_password_jsp</result>        	
+		</action>
+		        
+		<action name="manager_sms_password_setting_jsp">
+			<result name="success" type="tiles">manager_sms_password_setting_jsp</result>        	
+		</action>
+		        
+		<action name="manager_sms_setting_jsp">
+			<result name="success" type="tiles">manager_sms_setting_jsp</result>        	
+		</action>
+		
+		<action name="manager_sms_register_setting_jsp">
+			<result name="success" type="tiles">manager_sms_register_setting_jsp</result>        	
+		</action>
+		
+		<action name="manager_mail_setting_jsp">
+			<result name="success" type="tiles">manager_mail_setting_jsp</result>        	
+		</action>
+		        
+		<action name="manager_mail_jsp">
+			<result name="success" type="tiles">manager_mail_jsp</result>        	
+		</action>
+		        
+		<action name="manager_ntfc_mail_jsp">
+			<result name="success" type="tiles">manager_ntfc_mail_jsp</result>        	
+		</action>
+
+		<action name="manager_work_jsp">
+			<result name="success" type="tiles">manager_work_jsp</result>        	
+		</action>
+		        
+		<action name="manager_give_work_jsp">
+			<result name="success" type="tiles">manager_give_work_jsp</result>        	
+		</action>
+		    
+		<action name="manager_emp_det_assign_work">
+			<result name="success" type="tiles">manager_emp_det_assign_work</result>        	
+		</action>
+		    
+		<action name="manager_submit_work_jsp">
+			<result name="success" type="tiles">manager_submit_work_jsp</result>        	
+		</action>
+		        
+		<action name="manager_approve_work_jsp">
+			<result name="success" type="tiles">manager_approve_work_jsp</result>        	
+		</action>
+		      
+		<action name="manager_approve_work_detail_jsp">
+			<result name="success" type="tiles">manager_approve_work_detail_jsp</result>        	
+		</action>
+		        
+		<action name="manager_project_jsp">
+			<result name="success" type="tiles">manager_project_jsp</result>        	
+		</action>
+		        
+		<action name="manager_client_detail_jsp">
+			<result name="success" type="tiles">manager_client_detail_jsp</result>        	
+		</action>
+		        
+		<action name="manager_add_client_jsp">
+			<result name="success" type="tiles">manager_add_client_jsp</result>        	
+		</action>
+		        
+		<action name="manager_add_client_status_jsp">
+			<result name="success" type="tiles">manager_add_client_status_jsp</result>        	
+		</action>
+		       
+		<action name="manager_project_detail_jsp">
+			<result name="success" type="tiles">manager_project_detail_jsp</result>        	
+		</action>
+		        
+		<action name="manager_add_project_jsp">
+			<result name="success" type="tiles">manager_add_project_jsp</result>        	
+		</action>
+		        
+		<action name="manager_show_assign_work_detail_jsp">
+			<result name="success" type="tiles">manager_show_assign_work_detail_jsp</result>        	
+		</action>
+		        
+		<action name="manager_show_assign_work_jsp">
+			<result name="success" type="tiles">manager_show_assign_work_jsp</result>        	
+		</action>
+		        
+		<action name="manager_show_submit_work_jsp">
+			<result name="success" type="tiles">manager_show_submit_work_jsp</result>        	
+		</action>
+           
+		<action name="manager_leave_jsp">
+			<result name="success" type="tiles">manager_leave_jsp</result>        	
+		</action>
+		
+		<action name="manager_em_leave_jsp">
+			<result name="success" type="tiles">manager_em_leave_jsp</result>        	
+		</action>
+		
+		<action name="manager_mul_leave_jsp">
+			<result name="success" type="tiles">manager_mul_leave_jsp</result>        	
+		</action>
+		
+		<action name="manager_draft_detail_jsp">
+			<result name="success" type="tiles">manager_draft_detail_jsp</result>        	
+		</action>
+		
+		<action name="manager_draft_mail_jsp">
+			<result name="success" type="tiles">manager_draft_mail_jsp</result>        	
+		</action>
+		
+		
+		
+		
+		
+		
+        <!--******************************************************************************************************  -->
+        <!-- ************************************************CLiCK************************************************** -->
+        <!--******************************************************************************************************  -->
+        
+        
+		<!-- This action returns the result of add_user.jsp Page -->
+		<action name="add_user_click" method="add_user_success" class="assys.com.dbAction.admin.AddUserAction">
+			<result name="true" type="tiles">add_user_jsp</result>
+			<result name="false">jsp/welcome_login/error.jsp</result>
+		</action>
+		        
+		<!-- This action returns the appropriate result whenever user trying to login -->
+		<action name="loginClick" class="assys.com.dbAction.welcome_login.LoginDbAction">
+			<!-- <interceptor-ref name="login"/> -->
+			<result name="admin" type="tiles">admin_dashboard_jsp</result>
+			<result name="client" type="tiles">client_home_jsp</result>
+			<result name="employee" type="tiles">employee_dashboard_jsp</result>
+			<result name="pmanager" type="tiles">manager_dashboard_jsp</result>
+			<result name="false">logi_error.jsp</result>            
+		</action>
+		        
+		<!-- This action returns the appropriate result whenever user trying to register -->
+		<action name="register_click"  method="register_success" class="assys.com.dbAction.welcome_login.RegisterAction">
+			<result name="true">register_step2.jsp</result>
+			<result name="false">jsp/error.jsp</result>
+		</action>
+		
+		<action name="forgot_click"  class="assys.com.dbAction.welcome_login.ForgotPassword">
+			<result name="true">login.jsp</result>
+			<result name="false">jsp/error.jsp</result>
+		</action>
+		
+		
+		<action name="manager_assign_work_click"   class="assys.com.dbAction.manager.AssignWork">
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">2097152</param>
+				<!-- <param name="allowedTypes">
+				image/png,image/gif,image/jpeg,image/pjpeg
+				</param> -->
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="SUCCESS" type="tiles">manager_emp_det_assign_work</result>
+		</action>
+		       
+		<action name="register2_click" class="assys.com.dbAction.welcome_login.registerStep2">
+			<result name="true">login_click</result>
+			<result name="admin" type="tiles">admin_home_jsp</result>
+			<result name="client" type="tiles">admin_home_jsp</result>
+			<result name="employee" type="tiles">employee_dashboard_jsp</result>
+			<result name="pmanager" type="tiles">manager_dashboard_jsp</result>
+			<result name="false">jsp/error.jsp</result>
+		</action>
+       
+        <!--******************************************************************************************************  -->
+        <!-- **********************************************EMPLOYEE Click*********************************************** -->
+        <!--******************************************************************************************************  -->
+       
+       <!-- *****************************************profile module*************************************** -->
+		       
+		<action name="employee_Edit_personal_profile_click"  class="assys.com.dbAction.employee.Personal_profile">
+			<result name="employee" type="tiles">employee_personal_profile_jsp</result>
+			<result name="pmanager" type="tiles">manager_personal_profile_jsp</result>
+			<result name="false">jsp/error.jsp</result>
+		</action>
+		       
+		<action name="employee_emergencyLeave_click"  class="assys.com.dbAction.employee.emergencyLeave">
+			<result name="employee" type="tiles">employee_leave_jsp</result> 
+			<result name="pmanager" type="tiles">manager_leave_jsp</result>
+			<result name="false">jsp/error.jsp</result>
+		</action>
+		       
+		<action name="admin_leaveApprove_click"  class="assys.com.dbAction.admin.LeaveApproval">
+			<result name="SUCCESS" type="tiles">admin_leave_jsp</result>    
+			<result name="false">jsp/error.jsp</result>
+		</action>
+		        
+		<action name="employee_edit_work_profile_click"  class="assys.com.dbAction.employee.Work_profile">
+			<result name="employee" type="tiles">employee_work_profile_jsp</result>   
+			<result name="pmanager" type="tiles">manager_work_profile_jsp</result> 
+			<result name="false">jsp/error.jsp</result>
+		</action>
+		       
+		<action name="employee_add_work_profile_click"  method="add" class="assys.com.dbAction.employee.Work_profile">
+			<result name="employee" type="tiles">employee_work_profile_jsp</result>
+			<result name="pmanager" type="tiles">manager_work_profile_jsp</result>    
+			<result name="false">jsp/error.jsp</result>
+		</action>
+       
+       <!-- ********************************************************************************************** -->
+       
+       
+       <!-- *****************************************contact module*************************************** -->
+       
+		<action name="employee_Edit_Contact_detail_click"  class="assys.com.dbAction.employee.EditContactDetail">
+			<result name="employee" type="tiles">employee_contact_detail_jsp</result>
+			<result name="pmanager" type="tiles">manager_contact_detail_jsp</result>
+			<result name="admin" type="tiles">admin_contact_detail_jsp</result>    
+			<result name="false">jsp/error.jsp</result>
+		</action>
+		       
+		<action name="employee_contact_detail_click"   class="assys.com.dbAction.employee.ContactDetail">
+			<result name="employee" type="tiles">employee_contact_detail_jsp</result>
+			<result name="pmanager" type="tiles">manager_contact_detail_jsp</result>
+			<result name="admin" type="tiles">admin_contact_detail_jsp</result>
+			<result name="false">jsp/error.jsp</result>
+		</action>
+		       		
+		<action name="employee_add_contact_click"   class="assys.com.dbAction.employee.Add_contact">
+			<result name="employee" type="tiles">employee_contacts_jsp</result>
+			<result name="pmanager" type="tiles">manager_contacts_jsp</result>
+			<result name="admin" type="tiles">admin_contacts_jsp</result>
+			<result name="false">jsp/error.jsp</result>
+		</action>
+		
+		<action name="employee_delete_contact_click"   class="assys.com.dbAction.employee.Delete_contact">
+			<result name="employee" type="tiles">employee_contacts_jsp</result>
+			<result name="pmanager" type="tiles">manager_contacts_jsp</result>
+			<result name="admin" type="tiles">admin_contacts_jsp</result>
+			<result name="false">jsp/error.jsp</result>
+		</action>
+		
+       
+       	<!-- ********************************************************************************************** -->
+		       
+		<action name="employee_send_mail_click"   class="assys.com.dbAction.employee.Sendmail">
+		           
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">2097152</param>
+				<!-- <param name="allowedTypes">
+				image/png,image/gif,image/jpeg,image/pjpeg
+				</param> -->
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="SUCCESS" type="tiles">employee_compose_jsp</result>    
+			<result name="false">jsp/error.jsp</result>
+		</action>
+		       
+		<action name="employee_work_submit_click"   class="assys.com.dbAction.employee.SubmitWork">
+			<result name="SUCCESS" type="tiles">employee_given_work_to_submit_jsp</result>    
+			<result name="false">jsp/error.jsp</result>
+		</action>
+		       
+		<action name="manager_send_mail_click"   class="assys.com.dbAction.manager.Sendmail">
+			<result name="SUCCESS" type="tiles">manager_compose_jsp</result>    
+			<result name="false">jsp/error.jsp</result>
+		</action>
+		       
+		<action name="admin_send_mail_click"   class="assys.com.dbAction.admin.Sendmail">
+			<result name="SUCCESS" type="tiles">admin_compose_jsp</result>    
+			<result name="false">jsp/error.jsp</result>
+		</action>
+		       
+		<action name="change_password" class="assys.com.dbAction.employee.ChangePassword">
+			<result name="employee" type="tiles">employee_change_password_jsp</result> 
+			<result name="pmanager" type="tiles">manager_change_password_jsp</result>   
+			<result name="false">jsp/error.jsp</result>
+		</action>
+		    
+		<action name="change_mail_password" class="assys.com.dbAction.manager.ChangeMailPassword">
+			<result name="employee" type="tiles">employee_mail_setting_jsp</result> 
+			<result name="pmanager" type="tiles">manager_mail_setting_jsp</result>   
+			<result name="false" type="tiles">manager_mail_setting_jsp</result>
+		</action>
+		   
+		<action name="SMS_change_number" class="assys.com.dbAction.employee.SMSChangeNumber">
+			<result name="employee" type="tiles">employee_sms_setting_jsp</result> 
+			<result name="pmanager" type="tiles">manager_sms_setting_jsp</result>    
+			<result name="false">jsp/error.jsp</result>
+		</action>
+		
+		<action name="SMS_register_number" class="assys.com.dbAction.manager.SMSRegisterNumber">
+			<result name="employee" type="tiles">employee_sms_register_setting_jsp</result> 
+			<result name="pmanager" type="tiles">manager_sms_register_setting_jsp</result>    
+			<result name="false">jsp/error.jsp</result>
+		</action>
+		
+		<action name="manager_add_client_click"   class="assys.com.dbAction.manager.Addclient">
+			<result name="SUCCESS" type="tiles">manager_client_detail_jsp</result>    
+			<result name="false">jsp/error.jsp</result>
+		</action>
+		       
+		<action name="admin_client_id_show_click"   class="assys.com.dbAction.admin.GenerateClientId">
+			<result name="SUCCESS" type="tiles">admin_client_id_jsp</result>    
+			<result name="false">jsp/error.jsp</result>
+		</action>
+		       
+		<action name="manager_client_id_show_click"   class="assys.com.dbAction.manager.ShowClientId">
+			<result name="SUCCESS" type="tiles">manager_add_client_status_mail_jsp</result>
+			<result name="Register" type="tiles">manager_added_client_jsp</result>
+			<result name="false">jsp/error.jsp</result>
+		</action>
+		       
+		<action name="manager_add_client_id_mail_click"   class="assys.com.dbAction.manager.SendClientIdMail">
+			<result name="SUCCESS" type="tiles">manager_client_detail_jsp</result> 
+			<result name="false">jsp/error.jsp</result>
+		</action>
+
+		<action name="manager_approve_work_click"   class="assys.com.dbAction.manager.ApproveWork">
+			<result name="SUCCESS" type="tiles">manager_approve_work_jsp</result> 
+			<result name="false">jsp/error.jsp</result>
+		</action>
+		
+		<action name="manager_add_project_click" class="assys.com.dbAction.manager.AddProject">
+			<result name="SUCCESS" type="tiles">manager_project_detail_jsp</result> 
+			<result name="false">jsp/error.jsp</result>
+		</action>
+		
+		<action name="AjaxInbox" class="assys.com.joinQuery.InboxFetchAjax" method="AjaxInbox">
+			<!-- <result name="SUCCESS"></result> --> 
+			
+		</action>		
+		
+	</package>
+</struts>

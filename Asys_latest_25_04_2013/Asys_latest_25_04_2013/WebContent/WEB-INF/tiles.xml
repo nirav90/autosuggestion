@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<!-- This tiles shows login.jsp page -->
+    <definition name="login_jsp" template="/jsp/welcome_login/login_layout.jsp">
+        <put-attribute name="pageTitle" value="Sign-IN or Register"/>
+        <!-- <put-attribute name="header" value="/jsp/welcome_login/header_login.jsp"/>
+        <put-attribute name="footer" value="/jsp/welcome_login/footer_login.jsp"/> -->
+        <put-attribute name="body" value="/index1.jsp"/>
+    </definition>
+	
+    
+    <!--********************************************************************************************************  -->
+	<!-- *************************************************ADMIN TILES**********************************************  -->
+	<!--********************************************************************************************************  -->
+    
+    
+    <definition name="Admin_baseLayout" template="/jsp/admin/admin_layout.jsp">
+        <put-attribute name="pageTitle" value=" "/>
+        <put-attribute name="header" value="/jsp/admin/header_admin.jsp"/>
+        <put-attribute name="footer" value="/jsp/admin/footer.jsp"/>
+        <put-attribute name="sidebar" value=""/>
+        <put-attribute name="body" value=" "/>
+    </definition>
+    
+	<!-- This tiles shows admin home page -->
+    <definition name="admin_home_jsp" extends="Admin_baseLayout">
+        <put-attribute name="pageTitle" value="Sign-IN or Register"/>
+        <put-attribute name="sidebar" value="/jsp/admin/sidebar_admin.jsp"/>
+        <put-attribute name="body" value="/jsp/admin/Thanks.jsp"/>
+    </definition>
+
+	<!-- This tiles shows admin admin_setting_jsp page -->
+	<definition name="admin_setting_jsp" extends="Admin_baseLayout">
+        <put-attribute name="pageTitle" value="Sign-IN or Register"/>
+        <put-attribute name="sidebar" value="/jsp/admin/setting_sidebar_admin.jsp"/>
+        <put-attribute name="body" value="/jsp/admin/Thanks.jsp"/>
+    </definition>
+
+	<!-- This tiles shows admin admin_setting_jsp page -->
+	<definition name="admin_global_setting_jsp" extends="Admin_baseLayout">
+        <put-attribute name="pageTitle" value="Sign-IN or Register"/>
+        <put-attribute name="sidebar" value="/jsp/admin/setting_sidebar_admin.jsp"/>
+        <put-attribute name="body" value="/jsp/admin/global_setting.jsp"/>
+    </definition>
+
+	<!-- This tiles shows admin admin_setting_jsp page -->
+	<definition name="admin_user_default_jsp" extends="Admin_baseLayout">
+        <put-attribute name="pageTitle" value="Sign-IN or Register"/>
+        <put-attribute name="sidebar" value="/jsp/admin/setting_sidebar_admin.jsp"/>
+        <put-attribute name="body" value="/jsp/admin/user_default.jsp"/>
+    </definition>
+	
+	<!-- This tiles shows admin webmail_setting_jsp.action page -->
+	<definition name="admin_webmail_setting_jsp" extends="Admin_baseLayout">
+        <put-attribute name="pageTitle" value="Sign-IN or Register"/>
+        <put-attribute name="sidebar" value="/jsp/admin/setting_sidebar_admin.jsp"/>
+        <put-attribute name="body" value="/jsp/admin/webmail_setting.jsp"/>
+    </definition>
+    
+	<!-- This tiles shows admin webmail_setting_jsp.action page -->
+	<definition name="admin_SMS_setting_jsp" extends="Admin_baseLayout">
+        <put-attribute name="pageTitle" value="Sign-IN or Register"/>
+        <put-attribute name="sidebar" value="/jsp/admin/setting_sidebar_admin.jsp"/>
+        <put-attribute name="body" value="/jsp/admin/SMS_setting.jsp"/>
+    </definition>
+    
+	<!-- This tiles shows admin webmail_setting_jsp.action page -->
+	<definition name="admin_brand_setting_jsp" extends="Admin_baseLayout">
+        <put-attribute name="pageTitle" value="Sign-IN or Register"/>
+        <put-attribute name="sidebar" value="/jsp/admin/setting_sidebar_admin.jsp"/>
+        <put-attribute name="body" value="/jsp/admin/brand_setting.jsp"/>
+    </definition>
+    
+	<!-- This tiles shows admin Employee Detail jsp  page -->
+	<definition name="admin_employee_detail_jsp" extends="Admin_baseLayout">
+        <put-attribute name="pageTitle" value="Sign-IN or Register"/>
+        <put-attribute name="sidebar" value="/jsp/admin/employee_detail_sidebar.jsp"/>
+        <put-attribute name="body" value="/jsp/admin/user_detail_dashboard.jsp"/>
+    </definition>
+    
+	
+	<!-- This tiles shows admin Employee Detail jsp  page -->
+	<definition name="admin_contacts_jsp" extends="Admin_baseLayout">
+        <put-attribute name="pageTitle" value="Sign-IN or Register"/>
+        <put-attribute name="sidebar" value="/jsp/admin/contacts_sidebar.jsp"/>
+        <put-attribute name="body" value="/jsp/admin/allcontacts.jsp"/>
+    </definition>
+    
+
+	<!-- This tiles shows admin Employee Detail jsp  page -->
+	<definition name="admin_add_contacts_jsp" extends="Admin_baseLayout">
+        <put-attribute name="pageTitle" value="Sign-IN or Register"/>
+        <put-attribute name="sidebar" value="/jsp/admin/contacts_sidebar.jsp"/>
+        <put-attribute name="body" value="/jsp/admin/add_contacts.jsp"/>
+    </definition>
+    
+	
+	<!-- This tiles shows admin dashBoard jsp  page -->
+	<definition name="admin_dashboard_jsp" extends="Admin_baseLayout">
+        <put-attribute name="pageTitle" value="Dashboard"/>
+        <put-attribute name="sidebar" value="/jsp/admin/sidebar_admin.jsp"/>
+        <put-attribute name="body" value="/jsp/admin/dashboard.jsp"/>
+    </definition>
+    
+	
+	<!-- This tiles shows admin dashBoard jsp  page -->
+	<definition name="admin_project_jsp" extends="Admin_baseLayout">
+        <put-attribute name="pageTitle" value="Dashboard"/>
+        <put-attribute name="sidebar" value="/jsp/admin/project_sidebar.jsp"/>
+        <put-attribute name="body" value="/jsp/admin/project.jsp"/>
+    </definition>
+	
+
+    
+	<!-- This tiles shows admin add_user page -->
+	<definition name="add_user_jsp" extends="Admin_baseLayout">
+        <put-attribute name="pageTitle" value="Add New User"/>
+        <put-attribute name="sidebar" value="/jsp/admin/employee_detail_sidebar.jsp"/>
+        <put-attribute name="body" value="/jsp/admin/add_user.jsp"/>
+    </definition>
+    
+	<!-- This tiles shows admin change_password.jsp page -->
+	<definition name="admin_change_password_jsp" extends="Admin_baseLayout">
+        <put-attribute name="pageTitle" value="change password"/>
+        <put-attribute name="sidebar" value="/jsp/admin/sidebar_admin.jsp"/>
+        <put-attribute name="body" value="/jsp/admin/change_password.jsp"/>
+    </definition>
+    
+	
+	<definition name="admin_compose_jsp" extends="Admin_baseLayout">
+        <put-attribute name="pageTitle" value="dashboard"/>
+        <put-attribute name="sidebar" value="/jsp/admin/sidebar_admin.jsp"/>
+        <put-attribute name="body" value="/jsp/admin/compose.jsp"/>
+    </definition>
+	
+	<definition name="admin_mail_click_jsp" extends="Admin_baseLayout">
+        <put-attribute name="pageTitle" value="dashboard"/>
+        <put-attribute name="sidebar" value="/jsp/admin/sidebar_admin.jsp"/>
+        <put-attribute name="body" value="/jsp/admin/inbox.jsp"/>
+    </definition>
+    
+	<definition name="admin_sent_mail_jsp" extends="Admin_baseLayout">
+        <put-attribute name="pageTitle" value="dashboard"/>
+        <put-attribute name="sidebar" value="/jsp/admin/sidebar_admin.jsp"/>
+        <put-attribute name="body" value="/jsp/admin/sentmail.jsp"/>
+    </definition>
+	
+	<definition name="admin_leave_jsp" extends="Admin_baseLayout">
+        <put-attribute name="pageTitle" value="dashboard"/>
+        <put-attribute name="sidebar" value="/jsp/admin/sidebar_admin.jsp"/>
+        <put-attribute name="body" value="/jsp/admin/leave.jsp"/>
+    </definition>
+	
+	<definition name="leaveDetail_jsp" extends="Admin_baseLayout">
+        <put-attribute name="pageTitle" value="dashboard"/>
+        <put-attribute name="sidebar" value="/jsp/admin/sidebar_admin.jsp"/>
+        <put-attribute name="body" value="/jsp/admin/leaveDetail.jsp"/>
+    </definition>
+	
+	<definition name="admin_employee_show_jsp" extends="Admin_baseLayout">
+        <put-attribute name="pageTitle" value="dashboard"/>
+        <put-attribute name="sidebar" value="/jsp/admin/employee_detail_sidebar.jsp"/>
+        <put-attribute name="body" value="/jsp/admin/employeeShow.jsp"/>
+    </definition>
+	
+	<!--********************************************************************************************************  -->
+	<!-- *************************************************EMPLOYEE  TILES**********************************************  -->
+	<!--********************************************************************************************************  -->
+	
+	<definition name="Employee_baseLayout" template="/jsp/employee/employee_layout.jsp">
+        <put-attribute name="pageTitle" value=" "/>
+        <put-attribute name="header" value="/jsp/employee/header_employee.jsp"/>
+        <put-attribute name="footer" value="/jsp/employee/footer.jsp"/>
+        <put-attribute name="sidebar" value=""/>
+        <put-attribute name="body" value=" "/>
+    </definition>
+	
+	<!-- This tiles shows admin dashboard.jsp page -->
+	<definition name="employee_dashboard_jsp" extends="Employee_baseLayout">
+        <put-attribute name="pageTitle" value="dashboard"/>
+        <put-attribute name="sidebar" value="/jsp/employee/sidebar_employee.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/dashboard.jsp"/>
+    </definition>
+    
+	
+	<!-- This tiles shows admin profile_jsp.jsp page -->
+	<definition name="employee_profile_jsp" extends="Employee_baseLayout">
+        <put-attribute name="pageTitle" value="profile"/>
+       	<put-attribute name="sidebar" value="/jsp/employee/sidebar_work.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/profile.jsp"/>
+    </definition>
+    
+	<definition name="employee_personal_profile_jsp" extends="Employee_baseLayout">
+        <put-attribute name="pageTitle" value="personal profile"/>
+        <put-attribute name="sidebar" value="/jsp/employee/sidebar_work.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/personal_profile.jsp"/>
+    </definition>
+	
+	
+	<definition name="employee_work_profile_jsp" extends="Employee_baseLayout">
+        <put-attribute name="pageTitle" value="work profile"/>
+       	<put-attribute name="sidebar" value="/jsp/employee/sidebar_work.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/work_profile.jsp"/>
+    </definition>
+	
+	
+	<!-- This tiles shows admin Employee contacts jsp  page -->
+	<definition name="employee_contacts_jsp" extends="Employee_baseLayout">
+        <put-attribute name="pageTitle" value="contacts"/>
+		<put-attribute name="sidebar" value="/jsp/employee/contacts_sidebar.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/allcontacts.jsp"/>
+    </definition>
+    
+    <definition name="admin_contact_detail_jsp" extends="Admin_baseLayout">
+        <put-attribute name="pageTitle" value="Add Contacts"/>
+        <put-attribute name="sidebar" value="/jsp/admin/contacts_sidebar.jsp"/>
+        <put-attribute name="body" value="/jsp/admin/contact_detail.jsp"/>
+       
+	</definition>
+
+	<!-- This tiles shows admin Employee  add contacts jsp  page -->
+	<definition name="employee_add_contacts_jsp" extends="Employee_baseLayout">
+        <put-attribute name="pageTitle" value="add contacts"/>
+        <put-attribute name="sidebar" value="/jsp/employee/contacts_sidebar.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/add_contacts.jsp"/>
+       
+    </definition>
+    
+	<!-- This tiles shows admin Employee settings jsp  page -->
+	<definition name="employee_setting_jsp" extends="Employee_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/employee/setting_sidebar_employee.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/add_contacts.jsp"/>
+       
+    </definition>
+    
+	<!-- This tiles shows admin Employee settings change password jsp  page -->
+	<definition name="employee_change_password_jsp" extends="Employee_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/employee/setting_sidebar_employee.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/change_password.jsp"/>
+       
+    </definition>
+    
+	<definition name="employee_sms_setting_jsp" extends="Employee_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/employee/setting_sidebar_employee.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/SMS_setting.jsp"/>
+       
+    </definition>
+    
+	<definition name="employee_sms_password_setting_jsp" extends="Employee_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/employee/setting_sidebar_employee.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/SMS_password_setting.jsp"/>
+       
+    </definition>
+	
+	<definition name="employee_mail_setting_jsp" extends="Employee_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/employee/setting_sidebar_employee.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/mail_setting.jsp"/>
+       
+    </definition>
+    
+	<definition name="employee_mail_jsp" extends="Employee_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/employee/sidebar_employee.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/inbox.jsp"/>
+       
+    </definition>
+    
+	<definition name="employee_contact_detail_jsp" extends="Employee_baseLayout">
+        <put-attribute name="pageTitle" value="add contacts"/>
+        <put-attribute name="sidebar" value="/jsp/employee/contacts_sidebar.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/contact_detail.jsp"/>
+       
+    </definition>
+	
+	<definition name="employee_compose_jsp" extends="Employee_baseLayout">
+        <put-attribute name="pageTitle" value="dashboard"/>
+        <put-attribute name="sidebar" value="/jsp/employee/sidebar_employee.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/compose.jsp"/>
+    </definition>
+	
+	<definition name="employee_mail_click_jsp" extends="Employee_baseLayout">
+        <put-attribute name="pageTitle" value="dashboard"/>
+        <put-attribute name="sidebar" value="/jsp/employee/sidebar_employee.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/inbox.jsp"/>
+    </definition>
+    
+	<definition name="employee_sent_mail_jsp" extends="Employee_baseLayout">
+        <put-attribute name="pageTitle" value="dashboard"/>
+        <put-attribute name="sidebar" value="/jsp/employee/sidebar_employee.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/sentmail.jsp"/>
+    </definition>
+	
+	
+	<definition name="employee_content_jsp" extends="Employee_baseLayout" >
+        <put-attribute name="pageTitle" value="dashboard"/>
+        <put-attribute name="sidebar" value="/jsp/employee/sidebar_employee.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/content.jsp"/>
+    </definition>
+    
+	<definition name="employee_calender_jsp" extends="Employee_baseLayout" >
+        <put-attribute name="pageTitle" value="dashboard"/>
+        <put-attribute name="sidebar" value="/jsp/employee/sidebar_employee.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/calander.jsp"/>
+    </definition>
+	
+	
+	<definition name="employee_work_submit_jsp" extends="Employee_baseLayout" >
+        <put-attribute name="pageTitle" value="dashboard"/>
+        <put-attribute name="sidebar" value="/jsp/employee/employee_work_sidebar.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/submitWork.jsp"/>
+    </definition>
+	
+	
+	<definition name="employee_work_submited_jsp" extends="Employee_baseLayout" >
+        <put-attribute name="pageTitle" value="dashboard"/>
+        <put-attribute name="sidebar" value="/jsp/employee/employee_work_sidebar.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/showSubmitWork.jsp"/>
+    </definition>
+    
+	
+	<definition name="employee_leave_jsp" extends="Employee_baseLayout" >
+        <put-attribute name="pageTitle" value="dashboard"/>
+        <put-attribute name="sidebar" value="/jsp/employee/employee_leave_sidebar.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/dashboard.jsp"/>
+    </definition>
+    
+	<definition name="employee_em_leave_jsp" extends="Employee_baseLayout" >
+        <put-attribute name="pageTitle" value="dashboard"/>
+        <put-attribute name="sidebar" value="/jsp/employee/employee_leave_sidebar.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/emergencyLeave.jsp"/>
+    </definition>
+    
+	<definition name="employee_mul_leave_jsp" extends="Employee_baseLayout" >
+        <put-attribute name="pageTitle" value="dashboard"/>
+        <put-attribute name="sidebar" value="/jsp/employee/employee_leave_sidebar.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/multidayLeave.jsp"/>
+    </definition>
+	
+	<!--********************************************************************************************************  -->
+	<!-- *************************************************Manager  TILES**********************************************  -->
+	<!--********************************************************************************************************  -->
+	
+	
+	<definition name="Manager_baseLayout" template="/jsp/manager/manager_layout.jsp">
+        <put-attribute name="pageTitle" value=" "/>
+        <put-attribute name="header" value="/jsp/manager/header_manager.jsp"/>
+        <put-attribute name="footer" value="/jsp/manager/footer.jsp"/>
+        <put-attribute name="sidebar" value=""/>
+        <put-attribute name="body" value=" "/>
+    </definition>
+	
+	
+	
+	
+	<!-- This tiles shows admin dashboard.jsp page -->
+	<definition name="manager_dashboard_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="dashboard"/>
+        <put-attribute name="sidebar" value="/jsp/manager/sidebar_manager.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/dashboard.jsp"/>
+    </definition>
+    
+	
+	<!-- This tiles shows admin profile_jsp.jsp page -->
+	<definition name="manager_profile_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="profile"/>
+        <put-attribute name="sidebar" value="/jsp/manager/sidebar_profile.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/profile.jsp"/>
+    </definition>
+    
+	<definition name="manager_personal_profile_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="personal profile"/>
+        <put-attribute name="sidebar" value="/jsp/manager/sidebar_profile.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/personal_profile.jsp"/>
+    </definition>
+	
+	
+	<definition name="manager_work_profile_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="work profile"/>
+        <put-attribute name="sidebar" value="/jsp/manager/sidebar_profile.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/work_profile.jsp"/>
+    </definition>
+	
+	
+	<!-- This tiles shows admin Employee contacts jsp  page -->
+	<definition name="manager_contacts_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="contacts"/>
+        <put-attribute name="sidebar" value="/jsp/manager/contacts_sidebar.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/allcontacts.jsp"/>
+    </definition>
+    
+
+	<!-- This tiles shows admin Employee  add contacts jsp  page -->
+	<definition name="manager_add_contacts_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="add contacts"/>
+        <put-attribute name="sidebar" value="/jsp/manager/contacts_sidebar.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/add_contacts.jsp"/>
+       
+    </definition>
+    
+    <definition name="manager_contact_detail_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="add contacts"/>
+        <put-attribute name="sidebar" value="/jsp/manager/contacts_sidebar.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/contact_detail.jsp"/>
+
+    </definition>
+    
+	<!-- This tiles shows admin Employee settings jsp  page -->
+	<definition name="manager_setting_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/manager/setting_sidebar_manager.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/add_contacts.jsp"/>
+       
+    </definition>
+    
+	<!-- This tiles shows admin Employee settings change password jsp  page -->
+	<definition name="manager_change_password_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/manager/setting_sidebar_manager.jsp"/>
+        <put-attribute name="body" value="/jsp/employee/change_password.jsp"/>
+       
+    </definition>
+    
+	<definition name="manager_sms_setting_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/manager/setting_sidebar_manager.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/SMS_setting.jsp"/>
+       
+    </definition>
+    
+    <definition name="manager_sms_password_setting_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/manager/setting_sidebar_manager.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/SMS_password_setting.jsp"/>
+       
+    </definition>
+    
+	<definition name="manager_mail_setting_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/manager/setting_sidebar_manager.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/mail_setting.jsp"/>
+       
+    </definition>
+    
+	<definition name="manager_mail_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/manager/sidebar_manager.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/mail_setting.jsp"/>
+       
+    </definition>
+    
+	
+	<definition name="manager_work_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/manager/sidebar_work.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/mail_setting.jsp"/>
+       
+    </definition>
+    
+	
+	<definition name="manager_give_work_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/manager/sidebar_work.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/assignWork.jsp"/>
+       
+    </definition>
+    
+	<definition name="manager_submit_work_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/manager/sidebar_work.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/submitWork.jsp"/>
+       
+    </definition>
+    
+	
+	<definition name="manager_approve_work_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/manager/sidebar_work.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/approve_work.jsp"/>
+       
+    </definition>
+	
+	
+	<definition name="manager_project_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/manager/sidebar_project.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/project_dashboard.jsp"/>
+       
+    </definition>
+    
+	
+	<definition name="manager_client_detail_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/manager/sidebar_project.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/client_detail.jsp"/>
+       
+    </definition>
+    
+	<definition name="manager_add_client_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/manager/sidebar_project.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/add_client_detail.jsp"/>
+       
+    </definition>
+    
+	
+    <definition name="manager_project_detail_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/manager/sidebar_project.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/project_list.jsp"/>
+       
+    </definition>
+    
+    
+    <definition name="manager_show_assign_work_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/manager/sidebar_work.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/showAssignwork.jsp"/>
+       
+    </definition>
+	
+    <definition name="manager_show_assign_work_detail_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/manager/sidebar_work.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/assignworkDetail.jsp"/>
+       
+    </definition>
+    
+    <definition name="manager_show_submit_work_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="employee setting"/>
+        <put-attribute name="sidebar" value="/jsp/manager/sidebar_work.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/showSubmitWork.jsp"/>
+       
+    </definition>
+	
+	
+	 <definition name="manager_compose_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="compose mail"/>
+        <put-attribute name="sidebar" value="/jsp/manager/sidebar_manager.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/compose.jsp"/>
+       
+    </definition>
+    
+	 <definition name="manager_mail_click_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="dashboard"/>
+        <put-attribute name="sidebar" value="/jsp/manager/sidebar_manager.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/inbox.jsp"/>
+    </definition>
+	
+	  <definition name="manager_sent_mail_jsp" extends="Manager_baseLayout">
+        <put-attribute name="pageTitle" value="dashboard"/>
+        <put-attribute name="sidebar" value="/jsp/manager/sidebar_manager.jsp"/>
+        <put-attribute name="body" value="/jsp/manager/sentmail.jsp"/>
+    </definition>
+    
+	
+	 
+   
+		
+</tiles-definitions>
